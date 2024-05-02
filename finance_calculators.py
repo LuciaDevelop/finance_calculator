@@ -27,6 +27,9 @@ if user_choice == "investment":
     initial_amount = float(initial_amount)
     interest_rate = float(interest_rate)
     investment_time = float(investment_time)
+    
+    #Convert interest rate in a percentage 
+    interest_rate = interest_rate/100
 
     #Do the simple interest calculation only user chose simple.
     if interest == "simple":
