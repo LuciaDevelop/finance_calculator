@@ -27,7 +27,7 @@ if user_choice == "investment":
     initial_amount = float(initial_amount)
     interest_rate = float(interest_rate)
     investment_time = float(investment_time)
-    
+
     #Convert interest rate in a percentage 
     interest_rate = interest_rate/100
 
@@ -53,12 +53,20 @@ elif user_choice == "bond":
     interest_rate = float(interest_rate)
     repay_time = float(repay_time)
 
-    #Calculate the bond using the repayment formula.
+    # Convert percentage to decimal
+    annual_interest_rate = interest_rate / 100  
 
-    repayment = (interest_rate * house_value) / (1- (1 + interest_rate) ** (-repay_time))
+    print(annual_interest_rate)
+
+    # Convert annual rate to monthly rate
+    monthly_interest_rate = annual_interest_rate / 12  
+
+    print(monthly_interest_rate)
+
+    # Calculate the bond using the repayment formula.
+    repayment = (monthly_interest_rate * house_value) / (1 - (1 + monthly_interest_rate) ** (-repay_time))
 
     print("You will have to pay: " + str(repayment) + " every month to pay your bond")
-
     
 
     
